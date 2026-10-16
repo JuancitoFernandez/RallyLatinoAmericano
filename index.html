@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Stream Deck - Servicios de Emergencia</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="escritorio">
+    <div class="panel-streamdeck">
+      <!-- Barra superior decorativa estilo Stream Deck -->
+      <div class="barra-superior">
+        <span class="punto rojo"></span>
+        <span class="punto amarillo"></span>
+        <span class="punto verde"></span>
+        <span class="titulo-dock">Stream Deck • Emergencias</span>
+      </div>
+
+      <!-- Pantalla de estado con el servicio activo -->
+      <div class="pantalla-estado">
+        <span class="etiqueta-estado">Servicio Activo</span>
+        <p id="texto-estado" class="texto-estado">Selecciona un botón</p>
+      </div>
+
+      <!-- Grupo de los 3 botones con diseño físico Stream Deck -->
+      <div class="rejilla-botones">
+        
+        <!-- Botón 1: Bomberos -->
+        <div class="contenedor-tecla">
+          <button id="boton-bomberos" class="tecla-deck tecla-bomberos" type="button" title="Bomberos">
+            <div class="borde-exterior">
+              <div class="pantalla-tecla">
+                <!-- Icono de Bomberos (Camión / Fuego) -->
+                <svg class="icono-servicio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z" fill="#ffedd5"/>
+                  <path d="M12 18v-2"/>
+                </svg>
+              </div>
+            </div>
+          </button>
+          <span class="etiqueta-nombre">Bomberos</span>
+        </div>
+
+        <!-- Botón 2: Hospital -->
+        <div class="contenedor-tecla">
+          <button id="boton-hospital" class="tecla-deck tecla-hospital" type="button" title="Hospital">
+            <div class="borde-exterior">
+              <div class="pantalla-tecla">
+                <!-- Icono de Hospital (Cruz Médica) -->
+                <svg class="icono-servicio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 5v14M5 12h14" />
+                  <rect x="3" y="3" width="18" height="18" rx="4" />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <span class="etiqueta-nombre">Hospital</span>
+        </div>
+
+        <!-- Botón 3: Policía -->
+        <div class="contenedor-tecla">
+          <button id="boton-policia" class="tecla-deck tecla-policia" type="button" title="Policía">
+            <div class="borde-exterior">
+              <div class="pantalla-tecla">
+                <!-- Icono de Policía (Placa / Escudo con estrella) -->
+                <svg class="icono-servicio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polygon points="12 8 13.5 11 17 11.5 14.5 13.8 15.2 17.2 12 15.4 8.8 17.2 9.5 13.8 7 11.5 10.5 11 12 8" fill="#ffd166" stroke="none" />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <span class="etiqueta-nombre">Policía</span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

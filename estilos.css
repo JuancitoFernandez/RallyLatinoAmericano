@@ -1,0 +1,196 @@
+/* Reset general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at 75% 25%, #f1c7d4 0%, #d8b8e8 45%, #b9bfe8 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Área central */
+.escritorio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Panel blanco flotante estilo Stream Deck (como en la imagen) */
+.panel-streamdeck {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 24px 28px 28px 28px;
+  box-shadow: 0 24px 50px rgba(58, 42, 85, 0.18), 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 440px;
+  width: 100%;
+}
+
+/* Barra superior minimalista */
+.barra-superior {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.punto.rojo { background-color: #ff5f56; }
+.punto.amarillo { background-color: #ffbd2e; }
+.punto.verde { background-color: #27c93f; }
+
+.titulo-dock {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: #868e96;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Pantalla de estado con el servicio activo */
+.pantalla-estado {
+  width: 100%;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 14px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.etiqueta-estado {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #adb5bd;
+  margin-bottom: 3px;
+}
+
+.texto-estado {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #343a40;
+  transition: color 0.25s ease;
+}
+
+/* Rejilla de los 3 botones */
+.rejilla-botones {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+/* Contenedor individual de cada tecla y su texto */
+.contenedor-tecla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Botón base Stream Deck */
+.tecla-deck {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Borde exterior oscuro idéntico a la imagen */
+.borde-exterior {
+  width: 78px;
+  height: 78px;
+  background: #ffffff;
+  border: 2.6px solid #23272f;
+  border-radius: 20px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.15s ease;
+}
+
+/* Pantalla LCD interior del botón con el degradado azul de la foto */
+.pantalla-tecla {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #4d57ca 0%, #3842b5 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.35), inset 0 -2px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+/* Iconos de los servicios */
+.icono-servicio {
+  width: 34px;
+  height: 34px;
+  color: #ffffff;
+  stroke: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  transition: transform 0.2s ease;
+}
+
+/* Efectos al pasar el cursor y al hacer clic */
+.tecla-deck:hover .borde-exterior {
+  border-color: #111418;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
+}
+
+.tecla-deck:hover .pantalla-tecla {
+  background: linear-gradient(180deg, #5964d8 0%, #434dc5 100%);
+}
+
+.tecla-deck:hover .icono-servicio {
+  transform: scale(1.1);
+}
+
+.tecla-deck:active {
+  transform: scale(0.93);
+}
+
+.tecla-deck:active .borde-exterior {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo cuando una tecla está seleccionada/activa */
+.tecla-deck.activo .borde-exterior {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25), 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Etiquetas de texto debajo de cada botón */
+.etiqueta-nombre {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #495057;
+  letter-spacing: 0.2px;
+}
