@@ -1,0 +1,10 @@
+{
+  "name": "rally",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*", "shared"],
+  "scripts": {
+    "dev:desktop": "npm run dev --workspace=apps/desktop",
+    "dev:mobile": "npm run start --workspace=apps/mobile",
+    "dev:backend": "npm run start:dev --workspace=apps/backend"
+  }
+}
